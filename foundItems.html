@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    <li ng-repeat="item in list.items">
+      {{ item.short_name }} - {{ item.name }}
+      <button class="btn btn-default" ng-click="list.onRemove({index: $index});"><span
+          class="glyphicon glyphicon-remove"></span>
+        Don't want this one!
+      </button>
+    </li>
+  </ul>
+  <div ng-if="list.items.length === 0" style="color: red;">Nothing found</div>
+</div>
