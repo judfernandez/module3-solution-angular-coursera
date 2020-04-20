@@ -19,7 +19,11 @@
       var promise = MenuSearchService.getMatchedMenuItems();
 
       promise.then(function (response) {
-        menu.itemsList = response.data.menu_items.filter(item => item.description.includes(searchTerm));
+        if ((searchTerm !== null) && (searchTerm !== '')) {
+          menu.itemsList = response.data.menu_items.filter(item => item.description.includes(searchTerm));
+        } else {
+          menu.itemsList = [];
+        }
       })
         .catch(function (error) {
           menu.itemsList = [];
