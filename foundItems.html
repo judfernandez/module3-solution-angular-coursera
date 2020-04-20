@@ -1,9 +1,7 @@
 <div>
   <ul>
     <li ng-repeat="item in list.items">
-      {{ item.short_name }} - {{ item.name }}
-      <br>
-      {{item.description}}
+      {{ item.short_name }} - {{ item.name }} - {{item.description}}
       <button class="btn btn-default" ng-click="list.onRemove({index: $index});"><span
           class="glyphicon glyphicon-remove"></span>
         Don't want this one!
